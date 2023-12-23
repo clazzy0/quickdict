@@ -1,1 +1,1 @@
-// For general functions
+// For more general functions

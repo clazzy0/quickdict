@@ -1,5 +1,5 @@
-import styles from "@/app/ui/NavBar/button.module.css";
-import { ptSerif } from "@/app/ui/fonts";
+import styles from "@/app/ui/button.module.css"
+import { ptSerif } from "@/app/ui/fonts"
 
 export default function Home() {
   return (
@@ -20,5 +20,5 @@ export default function Home() {
         Start Session
       </button>
     </div>
-  );
+  )
 }

@@ -1,21 +1,24 @@
-"use client";
+"use client"
 
-import styles from "@/app/ui/NavBar/button.module.css";
-import AuthModal from "@/app/ui/Modals/AuthModal";
-import { useState } from "react";
-import { notoSans } from "@/app/ui/fonts";
+import styles from "@/app/ui/button.module.css"
+import AuthModal from "@/app/ui/AuthModal/AuthModal"
+import { useState } from "react"
+import { notoSans } from "@/app/ui/fonts"
+import { AuthModalContext } from "@/app/ui/AuthModal/authModalContext"
 
 export default function NavBarAuthButton() {
-  const [showModal, setShowModal] = useState(false);
-  const [modalOption, setModalOption] = useState<"login" | "kickoff">("login");
+  const [showModal, setShowModal] = useState(false)
+  const [modalOption, setModalOption] = useState<"login" | "kickoff">("login")
+  const [showEmailModal, setShowEmailModal] = useState(false)
 
   const openModal = (option: "login" | "kickoff") => {
-    setModalOption(option);
-    setShowModal(true);
-  };
+    setModalOption(option)
+    setShowModal(true)
+  }
   const closeModal = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+    setShowEmailModal(false)
+  }
 
   return (
     <div className={notoSans.className}>
@@ -33,12 +36,16 @@ export default function NavBarAuthButton() {
       </button>
 
       {showModal && (
-        <AuthModal
-          option={modalOption}
-          setOption={setModalOption}
-          onClose={closeModal}
-        />
+        <AuthModalContext.Provider
+          value={{
+            modalOption,
+            setModalOption,
+            closeModal,
+          }}
+        >
+          <AuthModal />
+        </AuthModalContext.Provider>
       )}
     </div>
-  );
+  )
 }

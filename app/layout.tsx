@@ -1,8 +1,8 @@
-import "@/app/ui/globals.css";
-import React from "react";
-import NavBar from "@/app/ui/NavBar/NavBar";
-import Footer from "@/app/ui/Footer";
-import type { Metadata } from "next";
+import "@/app/ui/globals.css"
+import React from "react"
+import NavBar from "@/app/ui/NavBar/NavBar"
+import Footer from "@/app/ui/Footer/Footer"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: {
@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   description:
     "The fastest way to get a definition for paper book readers. Shorten the time between search, definition, and reading.",
   metadataBase: new URL("https://quickdict.io"),
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -27,5 +27,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  );
+  )
 }
