@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="fixed inset-x-0 bottom-0 bg-gray-200 text-gray-700 text-center py-4 h-[90px]">
+    <footer className="bg-gray-200 text-gray-700 text-center py-4 h-[90px]">
       <div className="mb-3">
         <Link href="/about" className="mx-2">
           About
@@ -20,5 +20,5 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} QuickDict.io | All rights reserved.
       </p>
     </footer>
-  );
+  )
 }

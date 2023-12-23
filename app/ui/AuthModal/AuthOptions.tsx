@@ -1,9 +1,8 @@
+import Link from "next/link"
 import Image from "next/image"
 import googleLogo from "@/public/auth-logos/google-logo.svg"
 import githubLogo from "@/public/auth-logos/github-logo.svg"
-import Logo from "@/app/ui/Logo"
 import EmailInputForm from "@/app/ui/AuthModal/EmailInputForm"
-import { inter } from "@/app/ui/fonts"
 import { signIn } from "next-auth/react"
 import { useContext } from "react"
 import { AuthModalContext } from "@/app/ui/AuthModal/authModalContext"
@@ -16,7 +15,7 @@ export default function AuthOptions() {
       <h3 className="text-[22px] font-semibold tracking-tight">
         {context.modalOption === "login" ? "Sign in" : "Sign up"}
       </h3>
-      <p className="text-balance text-sm text-gray-500 mb-6">
+      <p className="text-balance text-sm text-gray-500 mb-8">
         to continue to QuickDict
       </p>
 
@@ -51,7 +50,7 @@ export default function AuthOptions() {
         </div>
       </button>
 
-      <div className="flex justify-center items-center mb-3">
+      <div className="flex justify-center items-center mb-4">
         <div className="w-full h-[1px] bg-gray-300"></div>
         <p className="mx-3 text-gray-500 text-sm">or</p>
         <div className="w-full h-[1px] bg-gray-300"></div>
@@ -61,13 +60,13 @@ export default function AuthOptions() {
 
       <br />
 
-      <div className="flex">
+      <div className="flex flex-row justify-between items-center">
         <p className="text-sm text-gray-500 font-medium">
           {context.modalOption === "login"
             ? "First time here? "
             : "Have an account? "}
           <span
-            className="hover:font-semibold  hover:text-[#1e8895] text-[#27b1c1] cursor-pointer"
+            className="hover:font-bold  hover:text-[#1e8895] text-[#27b1c1] cursor-pointer"
             style={{ transition: "color 0.3s" }}
             onClick={
               context.modalOption === "login"
@@ -78,7 +77,22 @@ export default function AuthOptions() {
             {context.modalOption === "login" ? "Sign up" : "Sign in"}
           </span>
         </p>
-        <p></p>
+        <div>
+          <Link
+            href="/privacy"
+            className="text-sm text-gray-500  mr-3 hover:font-semibold hover:text-gray-600"
+            onClick={() => context.closeModal()}
+          >
+            Privacy
+          </Link>
+          <Link
+            href="/tos"
+            className="text-sm text-gray-500 hover:font-semibold hover:text-gray-600"
+            onClick={() => context.closeModal()}
+          >
+            Terms
+          </Link>
+        </div>
       </div>
     </div>
   )
