@@ -7,10 +7,12 @@ import {
   FormLabel,
   FormControl,
 } from "@/app/ui/shadcn/ui/form"
+import { signIn } from "next-auth/react"
 import { Input } from "@/app/ui/shadcn/ui/input"
+import { Button } from "@/app/ui/shadcn/ui/button"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Button } from "@/app/ui/shadcn/ui/button"
+import { redirect } from "next/dist/server/api-utils"
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -24,7 +26,12 @@ export default function EmailInputForm() {
     },
   })
 
-  const handleSubmit = () => {}
+  const signInWithEmail = async (values: z.infer<typeof formSchema>) => {
+    const signInResults = await signIn("email", {
+      email: values.email,
+      callbackUrl: `${window.location.origin}`,
+    })
+  }
 
   return (
     <div className="text-left w-full">
@@ -32,7 +39,7 @@ export default function EmailInputForm() {
         <form
           className="flex flex-col gap-2 w-full"
           noValidate
-          onSubmit={form.handleSubmit(handleSubmit)}
+          onSubmit={form.handleSubmit(signInWithEmail)}
         >
           <FormField
             control={form.control}

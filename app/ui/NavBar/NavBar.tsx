@@ -1,10 +1,9 @@
 import Logo from "@/app/ui/Logo"
 import ProfileIcon from "@/app/ui/NavBar/ProfileIcon"
 import NavBarAuthButton from "@/app/ui/NavBar/NavBarAuthButton"
-import { auth } from "@/app/lib/auth"
 
 export default async function NavBar() {
-  const session = await auth()
+  // const session = await auth()
   return (
     <nav className="flex justify-between items-center h-[70px] mx-3 md:mx-12">
       <div className="flex items-center">
@@ -12,15 +11,16 @@ export default async function NavBar() {
       </div>
 
       <div className="flex items-center">
-        {!session?.user ? (
+        {/* {!session?.user ? (
           <NavBarAuthButton />
         ) : (
           <ProfileIcon
             name={session?.user?.name}
-            email={session.user.email!}
-            image={session.user.image!}
+            email={session?.user?.email}
+            image={session?.user?.image}
           />
-        )}
+        )} */}
+        <NavBarAuthButton />
       </div>
     </nav>
   )
