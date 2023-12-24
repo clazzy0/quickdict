@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth, { type NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
 import EmailProvider from "next-auth/providers/email"
@@ -34,11 +34,14 @@ export const authConfig = {
         },
       },
       from: process.env.EMAIL_FROM,
-      allowDangerousEmailAccountLinking: true,
     }),
   ],
   adapter: DrizzleAdapter(db),
   secret: process.env.AUTH_SECRET,
-}
-
-export const { handlers, auth, signOut } = NextAuth(authConfig)
+  callbacks: {
+    async session({ session, user }) {
+      session.user.id = user.id
+      return session
+    },
+  },
+} satisfies NextAuthOptions

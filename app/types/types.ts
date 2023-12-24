@@ -1,6 +1,10 @@
 export type AuthModalProps = {
-  option: "login" | "kickoff"
-  setOption: (option: "login" | "kickoff") => void
+  modalOption: "login" | "kickoff" | "emailStatus"
+  prevModalOption: "login" | "kickoff" | "emailStatus"
+  emailStatus: "success" | "failure"
+  setModalOption: (option: "login" | "kickoff" | "emailStatus") => void
+  setPrevModalOption: (option: "login" | "kickoff" | "emailStatus") => void
+  setEmailStatus: (status: "success" | "failure") => void
   closeModal: () => void
 }
 

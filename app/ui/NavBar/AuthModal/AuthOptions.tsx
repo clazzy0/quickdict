@@ -1,7 +1,7 @@
 import Image from "next/image"
 import googleLogo from "@/public/auth-logos/google-logo.svg"
 import githubLogo from "@/public/auth-logos/github-logo.svg"
-import EmailInputForm from "@/app/ui/AuthModal/EmailInputForm"
+import EmailInputForm from "./EmailInputForm"
 import { signIn } from "next-auth/react"
 
 export default function AuthOptions() {

@@ -1,13 +1,22 @@
 "use client"
 
 import styles from "@/app/ui/button.module.css"
-import AuthModal from "@/app/ui/AuthModal/AuthModal"
+import AuthModal from "@/app/ui/NavBar/AuthModal/AuthModal"
 import { useState } from "react"
 import { notoSans } from "@/app/ui/fonts"
+import { AuthModalContext } from "@/app/lib/context"
 
 export default function NavBarAuthButton() {
   const [showModal, setShowModal] = useState(false)
-  const [modalOption, setModalOption] = useState<"login" | "kickoff">("login")
+  const [modalOption, setModalOption] = useState<
+    "login" | "kickoff" | "emailStatus"
+  >("login")
+  const [emailStatus, setEmailStatus] = useState<"success" | "failure">(
+    "failure"
+  )
+  const [prevModalOption, setPrevModalOption] = useState<
+    "login" | "kickoff" | "emailStatus"
+  >("login")
 
   const openModal = (option: "login" | "kickoff") => {
     setModalOption(option)
@@ -31,12 +40,21 @@ export default function NavBarAuthButton() {
       >
         Kick Off
       </button>
+
       {showModal && (
-        <AuthModal
-          option={modalOption}
-          setOption={setModalOption}
-          closeModal={closeModal}
-        />
+        <AuthModalContext.Provider
+          value={{
+            modalOption,
+            prevModalOption,
+            emailStatus,
+            setModalOption,
+            setPrevModalOption,
+            setEmailStatus,
+            closeModal,
+          }}
+        >
+          <AuthModal />
+        </AuthModalContext.Provider>
       )}
     </div>
   )

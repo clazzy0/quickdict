@@ -12,13 +12,16 @@ import { Input } from "@/app/ui/shadcn/ui/input"
 import { Button } from "@/app/ui/shadcn/ui/button"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { redirect } from "next/dist/server/api-utils"
+import { useAuthModalContext } from "@/app/lib/context"
 
 const formSchema = z.object({
   email: z.string().email(),
 })
 
 export default function EmailInputForm() {
+  const { modalOption, setPrevModalOption, setEmailStatus, setModalOption } =
+    useAuthModalContext()
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,7 +33,17 @@ export default function EmailInputForm() {
     const signInResults = await signIn("email", {
       email: values.email,
       callbackUrl: `${window.location.origin}`,
+      redirect: false,
     })
+
+    if (!signInResults?.ok) {
+      setPrevModalOption(modalOption)
+      setEmailStatus("failure")
+      setModalOption("emailStatus")
+    }
+    setPrevModalOption(modalOption)
+    setEmailStatus("success")
+    setModalOption("emailStatus")
   }
 
   return (
