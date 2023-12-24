@@ -1,5 +1,5 @@
-import styles from "@/app/ui/button.module.css"
-import { ptSerif } from "@/app/ui/fonts"
+import styles from "@/components/button.module.css"
+import { ptSerif } from "@/components/fonts"
 
 export default function Home() {
   return (

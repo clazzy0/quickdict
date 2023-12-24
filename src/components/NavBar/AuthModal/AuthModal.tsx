@@ -2,7 +2,7 @@ import React from "react"
 import CloseButton from "./CloseButton"
 import EmailStatus from "./EmailStatus"
 import AuthOptionsWrapper from "./AuthOptionsWrapper"
-import { useAuthModalContext } from "@/app/lib/context"
+import { useAuthModalContext } from "@/lib/context"
 
 export default function AuthModal() {
   const { modalOption, closeModal } = useAuthModalContext()

@@ -1,7 +1,7 @@
-import "@/app/ui/globals.css"
+import "./globals.css"
 import React from "react"
-import NavBar from "@/app/ui/NavBar/NavBar"
-import Footer from "@/app/ui/Footer/Footer"
+import NavBar from "@/components/NavBar/NavBar"
+import Footer from "@/components/Footer/Footer"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen antialiased">
         <NavBar />
         <main className="flex flex-grow">{children}</main>
         <Footer />

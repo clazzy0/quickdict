@@ -1,12 +1,12 @@
 "use client"
 
-import styles from "@/app/ui/button.module.css"
-import AuthModal from "@/app/ui/NavBar/AuthModal/AuthModal"
+import styles from "@/components/button.module.css"
+import AuthModal from "@/components/NavBar/AuthModal/AuthModal"
 import { useState } from "react"
-import { notoSans } from "@/app/ui/fonts"
-import { AuthModalContext } from "@/app/lib/context"
+import { notoSans } from "@/components/fonts"
+import { AuthModalContext } from "@/lib/context"
 
-export default function NavBarAuthButton() {
+export default function AuthModalButtons() {
   const [showModal, setShowModal] = useState(false)
   const [modalOption, setModalOption] = useState<
     "login" | "kickoff" | "emailStatus"

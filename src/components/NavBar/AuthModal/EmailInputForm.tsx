@@ -6,13 +6,13 @@ import {
   FormMessage,
   FormLabel,
   FormControl,
-} from "@/app/ui/shadcn/ui/form"
+} from "@/components/ui/form"
 import { signIn } from "next-auth/react"
-import { Input } from "@/app/ui/shadcn/ui/input"
-import { Button } from "@/app/ui/shadcn/ui/button"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useAuthModalContext } from "@/app/lib/context"
+import { useAuthModalContext } from "@/lib/context"
 
 const formSchema = z.object({
   email: z.string().email(),

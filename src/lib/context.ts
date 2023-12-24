@@ -1,4 +1,4 @@
-import { AuthModalProps } from "@/app/types/types"
+import { AuthModalProps } from "@/types/types"
 import { createContext, useContext } from "react"
 
 // For the AuthModal component in NavBar

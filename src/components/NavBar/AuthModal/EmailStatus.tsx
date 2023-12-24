@@ -1,5 +1,5 @@
-import { Button } from "@/app/ui/shadcn/ui/button"
-import { useAuthModalContext } from "@/app/lib/context"
+import { Button } from "@/components/ui/button"
+import { useAuthModalContext } from "@/lib/context"
 
 export default function EmailStatus() {
   const { prevModalOption, emailStatus, setModalOption, closeModal } =
