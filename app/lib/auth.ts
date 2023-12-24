@@ -1,4 +1,4 @@
-import NextAuth, { type NextAuthOptions } from "next-auth"
+import { type NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
 import EmailProvider from "next-auth/providers/email"
@@ -37,7 +37,7 @@ export const authConfig = {
     }),
   ],
   adapter: DrizzleAdapter(db),
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET as string,
   callbacks: {
     async session({ session, user }) {
       session.user.id = user.id
