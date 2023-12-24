@@ -1,9 +1,10 @@
-import { type NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
 import EmailProvider from "next-auth/providers/email"
 import { db } from "@/app/lib/db"
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
+import type { NextAuthOptions } from "next-auth"
+import type { Adapter } from "next-auth/adapters"
 
 export const authConfig = {
   providers: [
@@ -36,7 +37,7 @@ export const authConfig = {
       from: process.env.EMAIL_FROM,
     }),
   ],
-  adapter: DrizzleAdapter(db),
+  adapter: DrizzleAdapter(db) as Adapter,
   secret: process.env.NEXTAUTH_SECRET as string,
   callbacks: {
     async session({ session, user }) {
