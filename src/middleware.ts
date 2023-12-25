@@ -3,9 +3,10 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  return NextResponse.redirect(new URL("/home", request.url))
+  // console.log("blocked")
+  // return NextResponse.redirect(new URL("/no", request.url))
 }
 
 export const config = {
-  matcher: ["/session", "/profile"],
+  matcher: ["/session", "/profile", "/usage"],
 }

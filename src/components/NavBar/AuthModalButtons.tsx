@@ -1,9 +1,8 @@
 "use client"
 
-import styles from "@/components/button.module.css"
 import AuthModal from "@/components/NavBar/AuthModal/AuthModal"
+import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import { notoSans } from "@/components/fonts"
 import { AuthModalContext } from "@/lib/context"
 
 export default function AuthModalButtons() {
@@ -27,19 +26,23 @@ export default function AuthModalButtons() {
   }
 
   return (
-    <div className={notoSans.className}>
-      <button
-        className={`${styles.buttonLight} md:mr-2`}
+    <div>
+      <Button
+        className={`sm:mr-8`}
         onClick={() => openModal("login")}
+        size="lg"
+        variant="link"
       >
         Login
-      </button>
-      <button
-        className={`${styles.buttonDark} hidden sm:inline-block`}
+      </Button>
+      <Button
+        className={` hidden sm:inline-block`}
         onClick={() => openModal("kickoff")}
+        size="lg"
+        variant="link"
       >
         Kick Off
-      </button>
+      </Button>
 
       {showModal && (
         <AuthModalContext.Provider

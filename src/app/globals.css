@@ -7,6 +7,13 @@
   outline: none;
 }
 
+.noSelect {
+  user-select: none;
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Safari and Chrome */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -85,11 +92,4 @@
   ol {
     list-style: revert;
   }
-}
-
-.noSelect {
-  user-select: none;
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  -webkit-user-select: none; /* Safari and Chrome */
 }

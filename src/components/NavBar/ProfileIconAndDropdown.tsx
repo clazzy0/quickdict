@@ -2,7 +2,7 @@
 
 import "@/app/globals.css"
 import Image from "next/image"
-import defaultUserIcon from "/public/svg-assets/default-user-icon.svg"
+import defaultUserIcon from "/public/default-user-icon.svg"
 import { ProfileIconProps } from "@/types/types"
 import {
   DropdownMenu,

@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migration:generate": "drizzle-kit generate:pg",
-    "migration:push": "drizzle-kit push:pg",
-    "migrate": "tsx ./src/db/migrate.ts"
+    "migration:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
+    "migrations:drop": "drizzle-kit drop --config=dirzzle.config.ts",
+    "db:push": "drizzle-kit push:pg --config=drizzle.config.ts",
+    "migrate": "tsx ./src/db/migrate.ts",
+    "studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@auth/core": "^0.19.0",
