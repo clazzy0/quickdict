@@ -1,10 +1,8 @@
-import { connect } from "@planetscale/database"
-import { drizzle } from "drizzle-orm/planetscale-serverless"
+import { neon, neonConfig } from "@neondatabase/serverless"
+import { drizzle } from "drizzle-orm/neon-http"
 
-const connection = connect({
-  host: process.env.DATABASE_HOST,
-  username: process.env.DATABASE_USERNAME,
-  password: process.env.DATABASE_PASSWORD,
-})
+neonConfig.fetchConnectionCache = true
 
-export const db = drizzle(connection)
+export const sql = neon(process.env.DATABASE_URL as string)
+
+export const db = drizzle(sql)
