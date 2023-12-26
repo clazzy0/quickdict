@@ -1,3 +1,10 @@
+export type UserInfoProps = {
+  id: string | null | undefined
+  email?: string | null | undefined
+  name?: string | null | undefined
+  image?: string | null | undefined
+}
+
 export type AuthModalProps = {
   modalOption: "login" | "kickoff" | "emailStatus"
   prevModalOption: "login" | "kickoff" | "emailStatus"
@@ -6,10 +13,4 @@ export type AuthModalProps = {
   setPrevModalOption: (option: "login" | "kickoff" | "emailStatus") => void
   setEmailStatus: (status: "success" | "failure") => void
   closeModal: () => void
-}
-
-export type ProfileIconProps = {
-  name?: string | null
-  email?: string | null
-  image?: string | null
 }

@@ -1,9 +1,9 @@
 "use client"
 
-import AuthModal from "@/components/NavBar/AuthModal/AuthModal"
+import AuthModal from "@/components/nav/auth-modal/AuthModal"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import { AuthModalContext } from "@/lib/context"
+import { AuthModalContext } from "@/context/context"
 
 export default function AuthModalButtons() {
   const [showModal, setShowModal] = useState(false)
@@ -28,18 +28,16 @@ export default function AuthModalButtons() {
   return (
     <div>
       <Button
-        className={`sm:mr-8`}
+        className="hidden sm:inline-block sm:mr-4"
         onClick={() => openModal("login")}
-        size="lg"
         variant="link"
       >
         Login
       </Button>
       <Button
-        className={` hidden sm:inline-block`}
         onClick={() => openModal("kickoff")}
-        size="lg"
-        variant="link"
+        variant="secondary"
+        size={"sm"}
       >
         Kick Off
       </Button>

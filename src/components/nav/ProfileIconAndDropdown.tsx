@@ -3,7 +3,7 @@
 import "@/app/globals.css"
 import Image from "next/image"
 import defaultUserIcon from "/public/default-user-icon.svg"
-import { ProfileIconProps } from "@/types/types"
+import { UserInfoProps } from "@/types/types"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,22 +15,21 @@ import {
 import { LogOut, User, BarChart2 } from "lucide-react"
 import { signOut } from "next-auth/react"
 
-export default function ProfileIconAndDropdown({ image }: ProfileIconProps) {
+export default function ProfileIconAndDropdown(userInfo: UserInfoProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <div className="noSelect h-[45px] w-[45px] flex justify-center items-center border-2 border-[#27b1c1] rounded-full active:scale-95">
+        <div className="noSelect flex justify-center items-center  border-primary rounded-full active:scale-95">
           <Image
             className="rounded-full"
-            src={image || defaultUserIcon}
+            src={userInfo.image || defaultUserIcon}
             alt="User's profile image"
-            width={image ? 45 : 35}
-            height={image ? 45 : 35}
-            onDragStart={(e) => e.preventDefault()}
+            width={40}
+            height={40}
           />
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[200px] mx-3 md:mx-12 p-1">
+      <DropdownMenuContent className="w-[150px]">
         <DropdownMenuLabel className="text-md">My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-md">
@@ -43,11 +42,11 @@ export default function ProfileIconAndDropdown({ image }: ProfileIconProps) {
         </DropdownMenuItem>
         <DropdownMenuItem
           className="text-md"
-          onClick={() =>
+          onClick={() => {
             signOut({
               callbackUrl: `${window.location.origin}`,
             })
-          }
+          }}
         >
           <LogOut className="mr-2 h-4 w-4" />
           Sign Out

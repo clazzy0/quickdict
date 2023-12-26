@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="flex text-primary h-[70px] md:px-12 px-6 text-sm">
-      <div className="mr-3 mt-8">
+    <footer className="flex items-center text-primary h-[65px] px-6 text-sm font-sans">
+      <div className="mr-3">
         Built by{" "}
         <Link
           href="https://www.instagram.com/clazzygg/"
@@ -12,7 +12,7 @@ export default function Footer() {
         >
           clazzy
         </Link>
-        , and a{" "}
+        . Project idea in this{" "}
         <Link
           href="https://blogbase.com"
           className="underline font-medium"
@@ -20,7 +20,7 @@ export default function Footer() {
         >
           blog
         </Link>{" "}
-        on the idea.
+        .
       </div>
     </footer>
   )

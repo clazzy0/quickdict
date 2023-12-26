@@ -1,6 +1,6 @@
 import Link from "next/link"
 import AuthOptions from "./AuthOptions"
-import { useAuthModalContext } from "@/lib/context"
+import { useAuthModalContext } from "@/context/context"
 
 export default function AuthOptionsWrapper() {
   const { modalOption, setModalOption, closeModal } = useAuthModalContext()
@@ -18,10 +18,10 @@ export default function AuthOptionsWrapper() {
       <br />
 
       <div className="flex flex-row justify-between items-center">
-        <p className="text-sm text-gray-500 font-medium">
+        <p className="text-sm text-gray-500">
           {modalOption === "login" ? "First time here? " : "Have an account? "}
           <span
-            className="hover:font-bold  hover:text-[#1e8895] text-[#27b1c1] cursor-pointer"
+            className="hover:font-bold font-semibold cursor-pointer"
             style={{ transition: "color 0.3s" }}
             onClick={
               modalOption === "login"

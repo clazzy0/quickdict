@@ -7,7 +7,7 @@ export default async function NavBar() {
   const session = await auth()
 
   return (
-    <nav className="flex justify-between items-center h-[65px] md:px-12 px-6 border-gray-100 border-b">
+    <nav className="flex justify-between items-center h-[80px] px-8">
       <div className="flex items-center">
         <Logo />
       </div>
@@ -16,7 +16,7 @@ export default async function NavBar() {
         {!session?.user ? (
           <AuthModalButtons />
         ) : (
-          <ProfileIconAndDropdown image={session?.user?.image} />
+          <ProfileIconAndDropdown {...session.user} />
         )}
       </div>
     </nav>
