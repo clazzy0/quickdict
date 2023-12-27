@@ -3,10 +3,13 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  const cookiesOne = request.cookies.get("next-auth.session-token")
-  const cookiesTwo = request.cookies.get("next-auth.crsf-token")
+  //  Production it is: __Secure-next-auth.session-token
+  const cookiesDevelopment = request.cookies.get("next-auth.session-token")
+  const cookiesProduction = request.cookies.get(
+    "__Secure-next-auth.session-token"
+  )
 
-  if (cookiesOne || cookiesTwo) {
+  if (cookiesDevelopment || cookiesProduction) {
     return NextResponse.next()
   } else return NextResponse.redirect(new URL("/", request.url))
 }
