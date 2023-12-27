@@ -18,10 +18,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://quickdict.io"),
 }
 
-export const config = {
-  runtime: "edge",
-}
-
 export default function RootLayout({
   children,
 }: {
