@@ -19,9 +19,9 @@ export default function ProfileIconAndDropdown(userInfo: UserInfoProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <div className="noSelect flex justify-center items-center  border-primary rounded-full active:scale-95">
+        <div className="noSelect flex justify-center items-center border-primary rounded-full active:scale-95">
           <Image
-            className="rounded-full"
+            className="rounded-full xs:h-[40px] xs:w-[40px] h-[32px] w-[32px]"
             src={userInfo.image || defaultUserIcon}
             alt="User's profile image"
             width={40}

@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center max-w-[64rem] mx-auto w-full text-center">
-      <p className="rounded-2xl bg-muted px-4 py-1.5 text-sm mb-4">
+      <p className="rounded-2xl bg-muted px-4 py-1.5 text-xs xs:text-sm mb-4">
         We are currently in early beta
       </p>
 
@@ -32,7 +32,7 @@ export default async function Home() {
         large amounts of difficult text.
       </p>
 
-      <div className="flex flex-row gap-3 sm:gap-5 tracking-tight">
+      <div className="flex flex-row gap-3 sm:gap-5 tracking-tight mt-1">
         {!session?.user ? (
           <WarnSignInButton />
         ) : (
