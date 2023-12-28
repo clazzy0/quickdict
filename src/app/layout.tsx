@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("antialiased", fontHeading.variable, inter.variable)}>
-        <div className="flex flex-col min-h-screen w-full mx-auto lg:max-w-[1400px]">
+        <div className="flex flex-col min-h-screen mx-auto lg:max-w-[1400px]">
           <SpeedInsights />
 
           <NavBar />
-          <main className="flex flex-grow mb-[15px]">{children}</main>
+          <main className="flex flex-grow w-full mb-[15px]">{children}</main>
           <Toaster />
           <Footer />
         </div>
