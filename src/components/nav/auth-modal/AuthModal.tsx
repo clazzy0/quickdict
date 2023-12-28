@@ -21,7 +21,7 @@ export default function AuthModal() {
       onClick={handleOverlayClick}
     >
       <div
-        className="bg-white w-full h-full md:w-[480px] md:h-[575px] rounded-lg shadow-lg animate-slide-in flex flex-col justify-center items-center px-12 relative"
+        className="bg-white w-full h-full xs:w-[480px] xs:h-[575px] rounded-lg shadow-lg animate-slide-in flex flex-col justify-center items-center xs:px-12 px-6 relative"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="absolute top-6 right-6">

@@ -17,8 +17,8 @@ export default function AuthOptionsWrapper() {
 
       <br />
 
-      <div className="flex flex-row justify-between items-center">
-        <p className="text-sm text-gray-500">
+      <div className="flex flex-col xs:flex-row xs:justify-between xs:items-center">
+        <p className="text-sm text-gray-500 mb-3 xs:mb-0">
           {modalOption === "login" ? "First time here? " : "Have an account? "}
           <span
             className="hover:font-bold font-semibold cursor-pointer"
@@ -36,7 +36,7 @@ export default function AuthOptionsWrapper() {
         <p>
           <Link
             href="/privacy"
-            className="text-sm text-gray-500  mr-3 hover:font-semibold hover:text-gray-600"
+            className="text-sm text-gray-500 mr-3 hover:font-semibold hover:text-gray-600"
             onClick={() => closeModal()}
           >
             Privacy
