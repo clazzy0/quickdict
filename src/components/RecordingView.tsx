@@ -41,15 +41,15 @@ export default function MicrophoneComponent() {
     recognitionRef.current.start()
   }
 
-  // Cleanup effect when the component unmounts
-  useEffect(() => {
-    return () => {
-      // Stop the speech recognition if it's active
-      if (recognitionRef.current) {
-        recognitionRef.current.stop()
-      }
-    }
-  }, [])
+  // // Cleanup effect when the component unmounts
+  // useEffect(() => {
+  //   return () => {
+  //     // Stop the speech recognition if it's active
+  //     if (recognitionRef.current) {
+  //       recognitionRef.current.stop()
+  //     }
+  //   }
+  // }, [])
 
   // Function to stop recording
   const stopRecording = () => {

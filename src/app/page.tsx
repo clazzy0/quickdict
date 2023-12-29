@@ -1,9 +1,9 @@
 import "./globals.css"
 import Link from "next/link"
-import { auth } from "@/lib/auth"
 import WarnSignInButton from "@/components/WarnSignInButton"
-import { Code2, Play } from "lucide-react"
+import { auth } from "@/lib/auth"
 import { Button } from "@/components/ui/button"
+import { Code2, Play } from "lucide-react"
 
 export default async function Home() {
   const session = await auth()

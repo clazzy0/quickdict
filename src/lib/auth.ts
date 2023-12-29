@@ -9,8 +9,8 @@ import type {
 import type { Adapter } from "next-auth/adapters"
 import type { NextAuthOptions } from "next-auth"
 import { getServerSession } from "next-auth"
-import { db } from "@/db/index"
-import { DrizzleAdapter } from "@auth/drizzle-adapter"
+import { prisma } from "@/lib/db"
+import { PrismaAdapter } from "@auth/prisma-adapter"
 
 export const authConfig = {
   providers: [
@@ -43,7 +43,7 @@ export const authConfig = {
       from: process.env.EMAIL_FROM,
     }),
   ],
-  adapter: DrizzleAdapter(db) as Adapter,
+  adapter: PrismaAdapter(prisma) as Adapter,
   secret: process.env.NEXTAUTH_SECRET as string,
   callbacks: {
     async session({ session, user }) {

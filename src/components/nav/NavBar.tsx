@@ -7,7 +7,7 @@ export default async function NavBar() {
   const session = await auth()
 
   return (
-    <nav className="flex justify-between items-center h-[80px] px-8">
+    <nav className="flex justify-between items-center h-[80px]">
       <div className="flex items-center">
         <Logo />
       </div>

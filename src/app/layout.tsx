@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("antialiased", fontHeading.variable, inter.variable)}>
-        <div className="flex flex-col min-h-screen mx-auto lg:max-w-[1400px]">
+        <div className="flex flex-col min-h-screen mx-auto lg:max-w-[1400px] px-8">
           <SpeedInsights />
 
           <NavBar />

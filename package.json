@@ -6,21 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "migration:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
-    "migrations:drop": "drizzle-kit drop --config=dirzzle.config.ts",
-    "db:push": "drizzle-kit push:pg --config=drizzle.config.ts",
-    "migrate": "tsx ./src/db/migrate.ts",
-    "studio": "drizzle-kit studio"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@auth/core": "^0.19.0",
-    "@auth/drizzle-adapter": "^0.3.11",
+    "@auth/prisma-adapter": "^1.0.12",
     "@coreui/react": "^4.11.0",
     "@emotion/react": "^11.11.1",
     "@hookform/resolvers": "^3.3.2",
     "@mui/icons-material": "^5.15.1",
     "@neondatabase/serverless": "^0.6.1",
+    "@prisma/client": "^5.7.1",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
@@ -29,8 +24,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
-    "drizzle-orm": "^0.29.1",
-    "fs": "^0.0.1-security",
+    "fs": "0.0.1-security",
     "lucide-react": "^0.300.0",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
@@ -48,16 +42,17 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.10.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "drizzle-kit": "^0.20.7",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "npm-force-resolutions": "^0.0.10",
     "postcss": "^8",
+    "prisma": "^5.7.1",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
