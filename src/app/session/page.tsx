@@ -1,9 +1,11 @@
-import RecordingView from "@/components/RecordingView"
+import DictionaryInformation from "@/components/DictionaryInformation"
+import SessionControlBar from "@/components/SessionControlBar"
 
 export default function Session() {
   return (
-    <div className="flex flex-col w-full justify-center mx-auto bg-red-300">
-      <RecordingView />
+    <div className="flex flex-col w-full mx-auto">
+      <DictionaryInformation />
+      <SessionControlBar />
     </div>
   )
 }

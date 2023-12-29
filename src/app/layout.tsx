@@ -30,7 +30,7 @@ export default function RootLayout({
           <SpeedInsights />
 
           <NavBar />
-          <main className="flex flex-grow w-full mb-[15px]">{children}</main>
+          <main className="flex flex-grow w-full">{children}</main>
           <Toaster />
           <Footer />
         </div>

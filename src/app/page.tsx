@@ -1,5 +1,7 @@
 import "./globals.css"
 import Link from "next/link"
+import Image from "next/image"
+import groupStudyIllustration from "/public/group-study-illustration.svg"
 import WarnSignInButton from "@/components/WarnSignInButton"
 import { auth } from "@/lib/auth"
 import { Button } from "@/components/ui/button"
@@ -9,7 +11,7 @@ export default async function Home() {
   const session = await auth()
 
   return (
-    <div className="flex flex-col justify-center items-center max-w-[64rem] mx-auto w-full text-center gap-4">
+    <div className="flex flex-col justify-center items-center max-w-[64rem] mx-auto w-full text-center gap-3">
       <p className="rounded-2xl bg-muted px-4 py-1.5 text-xs xs:text-sm">
         We are currently in early beta
       </p>
@@ -21,12 +23,12 @@ export default async function Home() {
         enthusiasts.
       </h1>
 
-      <p className="hidden sm:block text-gray-500 sm:text-md sm:leading-6 md:text-xl md:leading-8 text-balance">
+      <p className="hidden sm:block text-gray-500 sm:text-md sm:leading-7 md:text-xl md:leading-8 text-balance">
         This voice activated dictionary was built as an alternative to word
         search. <br />
         Made for students who read large amounts of difficult text.
       </p>
-      <p className="text-balance xs:block sm:hidden text-gray-500 text-md">
+      <p className="xs:block sm:hidden text-gray-500 text-md leading-7 max-w-[26rem]">
         This voice activated dictionary <br className="xs:hidden xxs:block" />
         was made for students who read <br className="xs:hidden xxs:block" />
         large amounts of difficult text.
@@ -53,6 +55,15 @@ export default async function Home() {
             GitHub
           </Button>
         </Link>
+      </div>
+
+      <div className="-mt-3 w-[350px] h-[140px] xs:w-[600px] xs:h-[240px] xs:mt-0 overflow-hidden relative">
+        <Image
+          src={groupStudyIllustration}
+          alt="Notion like illustration of a group study session."
+          className="w-full h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 xs:w-full"
+          // className="w-full w-4/5 sm:w-3/5 xs:-mt-10 md:-mt-20 lg:-mt-24  object-contain"
+        />
       </div>
     </div>
   )
