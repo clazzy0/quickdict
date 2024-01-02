@@ -15,21 +15,27 @@ import {
 import { LogOut, User, BarChart2 } from "lucide-react"
 import { signOut } from "next-auth/react"
 
-export default function ProfileIconAndDropdown(userInfo: UserInfoProps) {
+export default function ProfileIconAndDropdown({
+  userInfo,
+}: {
+  userInfo: UserInfoProps
+}) {
+  const { image } = userInfo
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <div className="noSelect flex justify-center items-center border-primary rounded-full active:scale-95">
+        <div className="noSelect rounded-full active:scale-95">
           <Image
             className="rounded-full xs:h-[40px] xs:w-[40px] h-[32px] w-[32px]"
-            src={userInfo.image || defaultUserIcon}
+            src={image || defaultUserIcon}
             alt="User's profile image"
             width={40}
             height={40}
           />
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[150px]">
+      <DropdownMenuContent className="xs:w-[150px]">
         <DropdownMenuLabel className="text-md">My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-md">

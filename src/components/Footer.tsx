@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="flex text-primary xs:text-sm text-xs font-sans mb-6">
+    <footer className="flex text-primary xs:text-sm text-xs font-sans xs:mb-6 xs:mt-0 my-6">
       <div className="mr-3">
         Built by{" "}
         <Link

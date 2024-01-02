@@ -16,7 +16,7 @@ export default async function NavBar() {
         {!session?.user ? (
           <AuthModalButtons />
         ) : (
-          <ProfileIconAndDropdown {...session.user} />
+          <ProfileIconAndDropdown userInfo={session.user} />
         )}
       </div>
     </nav>

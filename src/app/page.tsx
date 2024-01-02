@@ -57,12 +57,11 @@ export default async function Home() {
         </Link>
       </div>
 
-      <div className="-mt-3 w-[350px] h-[140px] xs:w-[600px] xs:h-[240px] xs:mt-0 overflow-hidden relative">
+      <div className="w-[320px] h-[140px] xs:w-[600px] xs:h-[240px] xs:mt-0 overflow-hidden relative">
         <Image
           src={groupStudyIllustration}
           alt="Notion like illustration of a group study session."
-          className="w-full h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 xs:w-full"
-          // className="w-full w-4/5 sm:w-3/5 xs:-mt-10 md:-mt-20 lg:-mt-24  object-contain"
+          className="noSelect h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 xs:w-full"
         />
       </div>
     </div>

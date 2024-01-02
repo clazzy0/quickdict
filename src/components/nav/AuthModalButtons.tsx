@@ -3,7 +3,7 @@
 import AuthModal from "@/components/nav/auth-modal/AuthModal"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import { AuthModalContext } from "@/context/context"
+import { AuthModalContext } from "@/context/AuthModalContext"
 
 export default function AuthModalButtons() {
   const [showModal, setShowModal] = useState(false)

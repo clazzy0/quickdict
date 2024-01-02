@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { useAuthModalContext } from "@/context/context"
+import { useAuthModalContext } from "@/context/AuthModalContext"
 
 export default function EmailStatus() {
   const { prevModalOption, emailStatus, setModalOption, closeModal } =

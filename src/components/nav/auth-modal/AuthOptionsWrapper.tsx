@@ -1,6 +1,6 @@
 import Link from "next/link"
 import AuthOptions from "./AuthOptions"
-import { useAuthModalContext } from "@/context/context"
+import { useAuthModalContext } from "@/context/AuthModalContext"
 
 export default function AuthOptionsWrapper() {
   const { modalOption, setModalOption, closeModal } = useAuthModalContext()
